@@ -1,0 +1,20 @@
+
+# CLI tool, only in development environment.
+# https://goframe.org/docs/cli
+gfcli:
+  gen:
+    dao:
+      - link: "mysql:root:123456@tcp(127.0.0.1:3306)/sleep?loc=Local&parseTime=true"
+        descriptionTag: true
+        tables: "admin_account"
+        # removePrefix: "admin_"
+        noModelComment: true
+
+  # 工具编译配置
+  build:
+    name:     "sleep"
+    arch:     "amd64"
+    path:     "./bin"
+    system:   "linux"
+    mod:      "none"
+    version:  "v0.0.1"
