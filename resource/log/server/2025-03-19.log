@@ -1,0 +1,6 @@
+2025-03-19T14:55:37.439+08:00 [INFO] pid[19784]: http server started listening on [:39013]
+2025-03-19T14:55:37.439+08:00 [INFO] swagger ui is serving at address: http://127.0.0.1:39013/swagger/
+2025-03-19T14:55:37.441+08:00 [INFO] openapi specification is serving at address: http://127.0.0.1:39013/api.json
+2025-03-19T15:00:41.362+08:00 [INFO] pid[1228]: http server started listening on [:39013]
+2025-03-19T15:00:41.362+08:00 [INFO] {9c0550bb21222e18ea3fb0745b9c7cd4} swagger ui is serving at address: http://127.0.0.1:39013/swagger/
+2025-03-19T15:00:41.364+08:00 [INFO] {9c0550bb21222e18ea3fb0745b9c7cd4} openapi specification is serving at address: http://127.0.0.1:39013/api.json
