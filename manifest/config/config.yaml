@@ -1,14 +1,14 @@
 server:
-  address:     ":39013"
+  address: ":39013"
   openapiPath: "/api.json"
   swaggerPath: "/swagger"
   serverRoot: "resource/public"               # 静态文件服务的目录根路径，配置时自动开启静态文件服务。
   DumpRouterMap: false                        # 是否在Server启动时打印所有的路由列表。
   logPath: "resource/log/server"              # 服务日志保存路径
   errorLogPattern: "error/{Y-m-d}.log"        # 异常错误日志文件格式。默认为"error-{Ymd}.log"
-  accessLogEnabled: true                      # 是否记录访问日志。默认为false
-  accessLogPattern: "access/{Y-m-d}.log"      # 访问日志文件格式。默认为"access-{Ymd}.log"
-# PProf配置
+  #  accessLogEnabled: true                      # 是否记录访问日志。默认为false
+  #  accessLogPattern: "access/{Y-m-d}.log"      # 访问日志文件格式。默认为"access-{Ymd}.log"
+  # PProf配置
   pprofEnabled: true                          # 是否开启PProf性能调试特性。默认为false
   pprofPattern: "/pprof"                      # 开启PProf时有效，表示PProf特性的页面访问路径，对当前Server绑定的所有域名有效。
 
@@ -19,16 +19,16 @@ cache:
 redis:
   default:
     address: "127.0.0.1:6379"
-    db: "0"
+    db: "4"
     pass: ""
     idleTimeout: "20"
 
 database:
   logger:
-    path: "logs/database"                     # 日志文件路径。默认为空，表示关闭，仅输出到终端
-    stdout: true
+    path: "resource/log/database"            # 日志文件路径。默认为空，表示关闭，仅输出到终端
   default:
-    link: "mysql:root:123456@tcp(127.0.0.1:3306)/sleep?loc=Local&parseTime=true"
+    link: "mysql:root:123456@tcp(127.0.0.1:3306)/usleep?loc=Local&parseTime=true"
+#    debug: true
 
 # 统一默认日志配置
 logger:
@@ -37,3 +37,12 @@ logger:
   stdoutColorDisabled: false                  # 关闭终端的颜色打印。可选：false|true，默认false
   rotateExpire: "7d"                          # 日志保留天数
   rotateBackupCompress: 3                     # 日志文件压缩级别，0-9,9最高
+
+gfToken:
+  cacheKey: "gfToken:"
+  timeOut: 10800                              # 秒；3h
+  maxRefresh: 5400                            # 缓存刷新时间；1.5h
+  multiLogin: true                            # 是否支持多端登录
+  encryptKey: "49c54195e750b04e74a8429b17896586"
+  cacheModel: "redis"                         #缓存模式 memory OR redis OR dist
+  distPath: "./resource/data/distTokenDb"     #使用磁盘缓存时配置数据缓存的目录

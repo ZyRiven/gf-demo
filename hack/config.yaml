@@ -4,7 +4,7 @@
 gfcli:
   gen:
     dao:
-      - link: "mysql:root:123456@tcp(127.0.0.1:3306)/sleep?loc=Local&parseTime=true"
+      - link: "mysql:root:123456@tcp(127.0.0.1:3306)/usleep?loc=Local&parseTime=true"
         descriptionTag: true
         tables: "admin_account"
         # removePrefix: "admin_"

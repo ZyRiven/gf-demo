@@ -2,12 +2,11 @@ package cmd
 
 import (
 	"context"
+	"sleep-service/internal/controller/admin/user"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
 	"github.com/gogf/gf/v2/os/gcmd"
-
-	"sleep-service/internal/controller/hello"
 )
 
 var (
@@ -20,7 +19,7 @@ var (
 			s.Group("/", func(group *ghttp.RouterGroup) {
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Bind(
-					hello.NewV1(),
+					user.Login,
 				)
 			})
 			s.Run()
