@@ -34,7 +34,6 @@ database:
 logger:
   level: "all"                                # 日志级别。可选：all|debu|info|warn|erro|fatal，默认为all
   file: "{Y-m-d}.log"                         # 日志文件格式。默认为"{Y-m-d}.log"
-  stdoutColorDisabled: false                  # 关闭终端的颜色打印。可选：false|true，默认false
   rotateExpire: "7d"                          # 日志保留天数
   rotateBackupCompress: 3                     # 日志文件压缩级别，0-9,9最高
 

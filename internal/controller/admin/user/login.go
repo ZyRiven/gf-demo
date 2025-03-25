@@ -44,6 +44,9 @@ func (a *cLogin) Login(ctx context.Context, req *user.LoginReq) (res *user.Login
 		return
 	}
 
+	res = &user.LoginRes{
+		Token: token,
+	}
 	//用户在线状态保存
 	service.OnlineLog().Invoke(gctx.New(), &model.OnlineParams{
 		Type:      consts.AdminOnlineType,

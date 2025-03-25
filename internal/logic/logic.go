@@ -6,6 +6,7 @@ package logic
 
 import (
 	_ "sleep-service/internal/logic/admin"
+	_ "sleep-service/internal/logic/context"
 	_ "sleep-service/internal/logic/onlineLog"
 	_ "sleep-service/internal/logic/token"
 )
